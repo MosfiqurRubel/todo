@@ -4,20 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do</title>
+    <link rel="stylesheet" href="css/style.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
 
   <body class="h-full">
-    <main id="main" class="px-4 py-5 space-y-3">
-      <button
-        id="myButton"
-        class="py-2 px-4 bg-teal-600 text-white hover:bg-teal-700 rounded-lg cursor-pointer"
-      >
-        ES6
-      </button>
+    <main class="container">
+      <header class="flex flex-col items-center justify-center space-y-4">
+        <div class="logo flex justify-center">
+          <img src="images/logo.png" alt="Mosfiqur Rahman Rubel" />
+        </div>
+        <h1 id="header" class="text-3xl font-bold">To-Do App</h1>
+      </header>
 
-      <p id="display" class="text-base font-medium text-sky-700"></p>
-      <p class="show text-base font-medium text-sky-700 thanks"></p>
+      <form class="new-task-container box">
+        <label for="new-task">Add New Task</label>
+        <input type="text" id="new-task" class="py-1 px-2 rounded-sm" />
+        <input
+          type="submit"
+          id="addTask"
+          class="bg-sky-500 hover:bg-sky-600 text-white py-1 px-3 cursor-pointer rounded-sm"
+          value="Add Task"
+        />
+      </form>
+
+      <div class="todo-list box">
+        <h2>Incomplete Tasks</h2>
+        <ul id="items">
+          <li class="item flex gap-2">
+            <input type="checkbox" /><label>Task Name 1</label>
+          </li>
+          <li class="item flex gap-2">
+            <input type="checkbox" /><label>Task Name 2</label>
+          </li>
+          <li class="item flex gap-2">
+            <input type="checkbox" /><label>Task Name 3</label>
+          </li>
+        </ul>
+      </div>
+      <!--/todo-list-->
+
+      <div class="complete-list box">
+        <h2>Completed Tasks</h2>
+        <ul>
+          <li class="item flex justify-between">
+            Task Name
+            <button
+              class="delete text-sm bg-red-500 hover:bg-red-600 text-white py-0.5 px-2 cursor-pointer rounded-sm"
+            >
+              Delete
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!--/complete-list-->
     </main>
     <script src="js/script.js"></script>
   </body>
